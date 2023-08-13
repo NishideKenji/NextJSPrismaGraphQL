@@ -3,8 +3,8 @@ import { ErrorMessage, Form, Formik } from 'formik'
 import React from 'react'
 import * as Yup from 'yup'
 
-import ValidationErrors from './erros/ValidationErrors'
-import TextInputGeneral from './form/TextInputGeneral'
+import ValidationErrors from '../components/erros/ValidationErrors'
+import TextInputGeneral from '../components/form/TextInputGeneral'
 
 export default function RegisterForm() {
   return (
