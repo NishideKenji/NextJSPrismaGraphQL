@@ -1,8 +1,19 @@
-import { Inter } from 'next/font/google'
-import Image from 'next/image'
+import { signIn, signOut, useSession } from 'next-auth/react'
 
-const inter = Inter({ subsets: ['latin'] })
-
-export default function Home() {
-  return <main className="p-10">test</main>
+export default function Component() {
+  const { data: session } = useSession()
+  if (session) {
+    return (
+      <>
+        Signed in as {session.user?.email} <br />
+        <button onClick={() => signOut()}>Sign out</button>
+      </>
+    )
+  }
+  return (
+    <>
+      Not signed in <br />
+      <button onClick={() => signIn()}>Sign in</button>
+    </>
+  )
 }
